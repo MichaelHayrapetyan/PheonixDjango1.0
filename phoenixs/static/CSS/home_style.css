@@ -77,15 +77,16 @@ header p:hover {
 .layer h1 {
 	position: absolute;
 	top: 50%;
+	left: -270px;
 	transform: translate(0, -50%);
-	font-size: rem;
-	font-weight: 800;
+	font-size: 3rem;
+	font-weight: 900;
 	color: var(--white);
 	text-shadow: 4px 4px 16px rgba(0, 0, 0, 0.3);
-	letter-spacing: 2px;
+	letter-spacing: 5px;
 }
 .layer h1 span {
-	color: var(--pink);
+	color: #f00;
 }
 
 .cta {
@@ -147,7 +148,7 @@ header p:hover {
 .back {
 	width: 100%;
 	height: 100%;
-	background-image: url("https://images.unsplash.com/photo-1484687742385-1249620c2687?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=821&q=80");
+	background-image: url("https://images.unsplash.com/photo-1547937414-009abc449011?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80");
 	background-size: cover;
 	background-position: left top;
 	position: absolute;

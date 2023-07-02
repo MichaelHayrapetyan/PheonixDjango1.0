@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>models </title>
+    <link rel="stylesheet" href="{% static 'css/cards.css' %}">
+
+</head>
+<body>
+{% include 'home/base.html' %}
+{% for car in cars %}
+<div class="wrapper">
+
+    <div class="card">
+        <a href="{% url 'detail' car.pk %}" class="header header_home">{{ car.company }} {{ car.name }}</a>
+        <div style="display:flex;">
+            <div class="content content_home">
+            <h1 class="formatted-number">{{ car.price }}</h1></div>
+        </div>
+            <div class="image">
+                <img src="{{ car.image.url }}">
+            </div>
+
+    </div>
+
+</div>
+{% endfor %}
+</body>
+<script>
+const formattedNumbers = document.querySelectorAll('.formatted-number');
+formattedNumbers.forEach((element) => {
+  const number = parseInt(element.textContent);
+  const formattedNumber = number.toLocaleString('en-US').replace(/,/g, '.') + ' $';
+  element.textContent = formattedNumber;
+});
+
+
+
+</script>
+</html>

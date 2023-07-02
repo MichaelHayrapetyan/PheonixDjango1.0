@@ -4,18 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home_style.css' %}">
 </head>
 <body>
 <nav class="navbar">
-    <a class="navbar-brand" href="#">Phoenix</a>
+    <a class="navbar-brand" href="{% url 'home' %}">Phoenix.com</a>
     <ul class="navbar-menu">
-        <li class="nav-item"><a href="#">Models</a></li>
+        <li class="nav-item"><a href="{% url 'models' %}">Models</a></li>
         <li class="nav-item"><a href="#">Explore</a></li>
         <li class="nav-item"><a href="#">Configurator</a></li>
         <li class="nav-item"><a href="#">News</a></li>
         <li class="nav-item"><a href="#">Dealer Locator</a></li>
         <li class="nav-item"><a href="#">Corporate</a></li>
-        <li class="nav-item"><a href="#">Museum</a></li>
+        {% if user.is_authenticated %}
+        <li class="nav-item"><a href="{% url 'login' %}">{{ user.username }}</a></li>
+        {% else %}
+        <li class="nav-item"><a href="{% url 'login' %}">Sing in</a></li>
+        {% endif %}
     </ul>
 </nav>
 </body>
