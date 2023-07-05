@@ -4,7 +4,7 @@
 {% include 'home/base.html' %}
 <div class="main">
     <ul class="cards">
-        <li class="cards_item" id="item_salad">
+        <li class="cards_item" >
             <div class="card">
                 <div class="card_image"><img src="{{ car.image.url }}" alt="mixed vegetable salad in a mason jar. ">
                 </div>
@@ -20,15 +20,17 @@
 
 
                 </div>
-                 <div class="details">
+                <div class="details">
                     <img src="{% static 'icons/stopwatch_icon.png' %}">
-                     <h1>{{ car.overclocking }} sec</h1>
-                     <img src="{% static 'icons/speedometer_icon.png' %}">
-                    <h1>{{ car.max_speed }} KM/H</h1>
-                     <img src="{% static 'icons/engine.png' %}">
-                    <h1>{{ car.horsepower }} HP</h1>
-                     <img src="{% static 'icons/weight.png' %}">
-                    <h1>{{ car.weight }} KG</h1>
+                    <h2>{{ car.overclocking }} sec</h2>
+                    <img src="{% static 'icons/speedometer_icon.png' %}">
+                    <h2>{{ car.max_speed }} KM/H</h2>
+                    <img src="{% static 'icons/engine.png' %}">
+                    <h2>{{ car.horsepower }} HP</h2>
+                    <img src="{% static 'icons/weight.png' %}">
+                    <h2>{{ car.weight }} KG</h2>
+                    <img src="{% static 'icons/petrol.png' %}">
+                    <h2>{{ car.engine_type }}</h2>
                 </div>
             </div>
 

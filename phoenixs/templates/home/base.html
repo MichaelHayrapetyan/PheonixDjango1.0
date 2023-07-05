@@ -8,16 +8,21 @@
 </head>
 <body>
 <nav class="navbar">
+
     <a class="navbar-brand" href="{% url 'home' %}">Phoenix.com</a>
     <ul class="navbar-menu">
-        <li class="nav-item"><a href="{% url 'models' %}">Models</a></li>
-        <li class="nav-item"><a href="#">Explore</a></li>
-        <li class="nav-item"><a href="#">Configurator</a></li>
-        <li class="nav-item"><a href="#">News</a></li>
-        <li class="nav-item"><a href="#">Dealer Locator</a></li>
+        <li class="nav-item"><a href="{% url 'models' %}">Super Cars</a></li>
+        <li class="nav-item"><a href="{% url 'exclusive' %}">Exclusive Cars</a></li>
+        <li class="nav-item"><a href="{% url 'company:Manufacturers' %}">Car Manufacturer</a></li>
+        <li class="nav-item"><a href="{% url 'news:news' %}">News</a></li>
         <li class="nav-item"><a href="#">Corporate</a></li>
         {% if user.is_authenticated %}
-        <li class="nav-item"><a href="{% url 'login' %}">{{ user.username }}</a></li>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <li class="nav-item">
+                <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+            </li>
+        </form>
         {% else %}
         <li class="nav-item"><a href="{% url 'login' %}">Sing in</a></li>
         {% endif %}
